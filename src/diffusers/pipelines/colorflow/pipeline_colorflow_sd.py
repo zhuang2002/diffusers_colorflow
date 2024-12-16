@@ -1069,8 +1069,6 @@ class ColorFlowSDPipeline(
 
                 image_B.paste(image.crop((left, top, right, bottom)), (left, top))
 
-                # image_A.save('/group/40034/zhuangjunhao/BrushNet_RAG/ref.png')
-                # image_B.save('/group/40034/zhuangjunhao/BrushNet_RAG/bw.png')
 
 
 
@@ -1186,9 +1184,6 @@ class ColorFlowSDPipeline(
         is_torch_higher_equal_2_1 = is_torch_version(">=", "2.1")
         with self.progress_bar(total=num_inference_steps) as progress_bar:
             for i, t in enumerate(timesteps):
-                # import os
-                # print(t)
-                # os.makedirs(f'/group/40034/zhuangjunhao/BrushNet_RAG/examples/colorguider/test_pipeline/test_result/all_output/paper_atten/300001/attenmap/{t.item()}/',exist_ok=True)
                 # Relevant thread:
                 # https://dev-discuss.pytorch.org/t/cudagraphs-in-pytorch-2-0/1428
                 if (is_unet_compiled and is_colorguider_compiled) and is_torch_higher_equal_2_1:
